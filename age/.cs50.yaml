@@ -1,0 +1,23 @@
+check50:  
+  files: &check50_files # "Alias", in YAML-speak, for the files we include in check50
+    - !exclude "*"
+    - !require main.py
+  checks:
+    check 365 days lived:
+      - run: python3 main.py
+        stdin: 365
+        stdout: 1
+        exit: 0
+    check 729 days lived:
+      - run: python3 main.py
+        stdin: 729
+        stdout: 1
+        exit: 0
+    check 1000 days lived:
+      - run: python3 main.py
+        stdin: 1000
+        stdout: 2
+        exit: 0
+
+submit50:
+  files: *check50_files

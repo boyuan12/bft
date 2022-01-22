@@ -2,6 +2,6 @@ check50:
   checks:
     Say hello to John:
       - run: python3 main.py
-      - stdin: John
-      - stdout: Hello, John
-      - exit: 0
+        stdin: John
+        stdout: Hello, John
+        exit: 0

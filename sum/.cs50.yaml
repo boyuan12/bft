@@ -1,0 +1,8 @@
+check50:  
+  files: &check50_files # "Alias", in YAML-speak, for the files we include in check50
+    - !exclude "*"
+    - !require main.py
+  checks: __init__.py
+
+submit50:
+  files: *check50_files

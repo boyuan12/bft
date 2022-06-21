@@ -1,0 +1,22 @@
+check50:  
+  files: &check50_files # "Alias", in YAML-speak, for the files we include in check50
+    - !exclude "*"
+    - !require main.py
+  checks:
+    Hello World:
+      - run: python3 main.py
+        stdin: 
+          - Hello 
+          - World
+        stdout: Hello, World
+        exit: 0
+    Python Fun:
+      - run: python3 main.py
+        stdin:
+          - Python 
+          - Fun
+        stdout: Python Fun
+        exit: 0
+
+submit50:
+  files: *check50_files

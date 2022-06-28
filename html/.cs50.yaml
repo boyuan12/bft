@@ -5,3 +5,5 @@ submit50:
     - !require main.py  
   check50:   
     files: *submit50_files
+    dependencies:
+      - beautifulsoup4
